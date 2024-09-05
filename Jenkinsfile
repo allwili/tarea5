@@ -20,7 +20,7 @@ pipeline{
         }
         stage("Test"){
             stages{
-                stage(){
+                stage('ejecutando test'){
                     steps{
                         sh 'npm run test'
                     }
@@ -29,7 +29,7 @@ pipeline{
         }
         stage("Build"){
             stages{
-                stage(){
+                stage('construyendo'){
                     steps{
                         sh 'npm run build'
                     }
