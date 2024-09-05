@@ -1,5 +1,8 @@
 pipeline{
     agent any
+    environment {
+        USERNAME = 'wilson'
+    }
     options{
         disableConcurrentBuilds()
     }
