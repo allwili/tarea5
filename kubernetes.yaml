@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tarea5-deployment
+  namespace: devops
+  labels:
+    app: tarea5
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: tarea5
+  template:
+    metadata:
+      labels:
+        app: tarea5
+    spec:
+      containers:
+      - name: tarea5
+        image: localhost:8082/tarea5:latest
+        ports:
+        - containerPort: 3001
