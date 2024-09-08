@@ -70,5 +70,24 @@ pipeline{
                 }
             }
         }
+        stage('deploy'){
+            steps {
+                script {
+                    
+                    if (env.BRANCH_NAME == 'main') {
+                        ambiente = 'prd'
+                    } else {
+                        ambiente = 'dev'
+                    }
+                    docker.withRegistry('http://localhost:8082', 'nexus-key') {
+                        withCredentials([file(credentialsId: "${ambiente}-env", variable: 'ENV_FILE')]) {
+                            writeFile file: '.env', text: readFile(ENV_FILE)
+                            sh "docker compose pull"
+                            sh "docker compose --env-file .env up -d --force-recreate"
+                        }
+                    }
+                }
+            }
+        }
     }
 }
