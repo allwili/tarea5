@@ -52,7 +52,7 @@ describe("Test Suite App", () => {
             })
     });
 
-    test("endpoint /palindromo/nopalindormo", async () => {
+    test("endpoint /sonar-scanner/nopalindormo", async () => {
         return await request(app)
             .get("/palindromo/adda cadabra")
             .expect("Content-Type", /text/)
