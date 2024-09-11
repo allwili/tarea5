@@ -35,3 +35,23 @@ spec:
 
       imagePullSecrets: 
       - name : nexus-regcred
+#
+#---
+#apiVersion: v1
+#kind: Service 
+#metadata:
+#  name: tarea5-svc
+#  namespace: devops 
+#  labels:
+#    app: tarea5
+
+#spec:
+#  selector:
+#    app: tarea5
+#  ports:
+#  - protocols: TCP
+#    port: 80 
+#    targetPort: 3001
+
+#type: NodePort 
+#---
