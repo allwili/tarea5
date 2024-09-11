@@ -3,6 +3,6 @@ services:
   backend:
     image: localhost:8082/tarea5:latest
     ports:
-      - "3001:3001"
+      - "3002:3002"
     env_file:
       - ${ENV_FILE}

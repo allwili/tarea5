@@ -20,7 +20,7 @@ spec:
         image: localhost:8082/tarea5:latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 3001
+        - containerPort: 3002
         env: 
         - name: USERNAME
           valueFrom: 
@@ -51,7 +51,7 @@ spec:
   ports:
   - protocols: TCP
     port: 80 
-    targetPort: 3001
+    targetPort: 3002
 
   type: NodePort 
 ---
